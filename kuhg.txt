@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AI Hub Pro - 60+ Best AI Tools 2025</title>
+
+<!-- Font Awesome + Inter font -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#ffffff; --card:#ffffff; --text:#0f172a; --text-light:#64748b; --primary:#6366f1; --radius:20px;
+    --shadow: 0 12px 30px rgba(2,6,23,0.08);
+    --glass: rgba(255,255,255,0.12);
+  }
+  [data-theme="dark"]{
+    --bg:#071026; --card:#0f172a; --text:#e6eef8; --text-light:#94a3b8; --primary:#7c6cff;
+    --shadow: 0 16px 48px rgba(2,6,23,0.6);
+    --glass: rgba(255,255,255,0.03);
+  }
+  *{box-sizing:border-box}
+  body{font-family:'Inter',system-ui,Segoe UI,Roboto,Arial; background:var(--bg); color:var(--text); margin:0; -webkit-font-smoothing:antialiased;}
+  header{padding:4.2rem 1rem 6rem;text-align:center;background:linear-gradient(135deg,var(--primary),#a78bfa); color:#fff; position:relative; overflow:hidden}
+  header::after{content:'';position:absolute;left:0;right:0;bottom:0;height:120px;background:var(--bg);border-radius:50% 50% 0 0}
+  h1{font-size:2.6rem;margin:0;font-weight:800}
+  .subtitle{margin-top:0.6rem;font-weight:600;font-size:1.05rem;opacity:0.98;text-shadow:0 1px 2px rgba(0,0,0,0.08)}
+  .controls{max-width:1200px;margin:-3.6rem auto 0;padding:0 1rem;display:flex;gap:1rem;align-items:center;justify-content:space-between;flex-wrap:wrap}
+  .search{flex:1;max-width:680px;position:relative}
+  .search input{width:100%;padding:14px 18px 14px 42px;border-radius:999px;border:none;background:var(--card);box-shadow:var(--shadow);font-size:1rem;color:var(--text)}
+  .search i{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text-light)}
+  .dark-btn{background:rgba(255,255,255,0.18);border:none;color:white;padding:10px 14px;border-radius:999px;cursor:pointer;backdrop-filter:blur(8px);font-size:1.05rem;display:flex;align-items:center;gap:10px}
+  .tabs{display:flex;gap:0.8rem;max-width:1200px;margin:2.2rem auto 1rem;padding:0 1rem;overflow-x:auto;scrollbar-width:none}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{padding:10px 18px;background:var(--card);border-radius:999px;color:var(--text-light);font-weight:700;cursor:pointer;box-shadow:var(--shadow);white-space:nowrap}
+  .tab.active{background:var(--primary);color:#fff;transform:translateY(-6px);box-shadow:0 18px 40px rgba(99,102,241,0.35)}
+  .container{max-width:1300px;margin:0 auto;padding:1rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.6rem;padding:1.2rem}
+  .card{background:var(--card);border-radius:16px;overflow:hidden;box-shadow:var(--shadow);transition:transform .28s ease, box-shadow .28s ease;display:block}
+  .card:hover{transform:translateY(-10px)}
+  .card-header{height:150px;display:flex;align-items:center;justify-content:center;font-size:44px;color:#fff}
+  .card-body{padding:18px;text-align:left}
+  .card-title{font-size:1.08rem;font-weight:700;margin-bottom:6px}
+  .card-desc{color:var(--text-light);font-size:0.95rem;margin-bottom:12px}
+  .visit-row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+  .visit-btn{background:var(--primary);color:#fff;padding:10px 14px;border-radius:999px;text-decoration:none;font-weight:700;box-shadow:0 8px 20px rgba(99,102,241,0.22);display:inline-flex;align-items:center;gap:8px}
+  .cat-pill{background:var(--glass);padding:8px 10px;border-radius:999px;font-size:12px;color:var(--text-light);font-weight:700}
+  .logo-img{width:48px;height:48px;object-fit:contain;border-radius:8px;margin-bottom:10px}
+  footer{padding:36px 16px;text-align:center;color:var(--text-light);background:transparent}
+  @media(max-width:760px){
+    h1{font-size:2rem}
+    .controls{margin-top:-2.4rem}
+    .grid{grid-template-columns:repeat(1,1fr)}
+    .card-header{height:110px}
+  }
+</style>
+</head>
+<body data-theme="light">
+
+<header>
+  <div class="controls">
+    <div class="search" style="flex:1">
+      <i class="fas fa-search"></i>
+      <input id="search" type="text" placeholder="Search 60+ AI tools... (e.g., ChatGPT, Midjourney, Runway)" aria-label="Search tools">
+    </div>
+    <button class="dark-btn" id="themeToggle" aria-label="Toggle dark mode">
+      <i id="icon" class="fas fa-moon"></i>
+      <span style="display:none">Toggle</span>
+    </button>
+  </div>
+
+  <h1>AI Hub Pro</h1>
+  <p class="subtitle">60+ Best AI Tools in One Place • Updated November 2025</p>
+</header>
+
+<!-- Tabs -->
+<div class="tabs" role="tablist" aria-label="Tool categories">
+  <div class="tab active" data-cat="all">All Tools</div>
+  <div class="tab" data-cat="chat">Chat AI</div>
+  <div class="tab" data-cat="image">Image AI</div>
+  <div class="tab" data-cat="video">Video AI</div>
+  <div class="tab" data-cat="img2vid">Image-to-Video</div>
+  <div class="tab" data-cat="audio">Audio AI</div>
+  <div class="tab" data-cat="coding">Coding AI</div>
+  <div class="tab" data-cat="writing">Writing AI</div>
+  <div class="tab" data-cat="productivity">Productivity AI</div>
+</div>
+
+<div class="container">
+  <div class="grid" id="grid">
+    <!-- Chat AI (include Grok inside Chat category) -->
+    <article class="card" data-cat="chat" data-title="ChatGPT">
+      <div class="card-header" style="background:#10a37f">
+        <img class="logo-img" src="https://logo.clearbit.com/openai.com" alt="ChatGPT logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">ChatGPT</div>
+        <div class="card-desc">OpenAI's conversational AI for answers, code, and creativity.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Chat</span>
+          <a class="visit-btn" href="https://chat.openai.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="chat" data-title="Gemini">
+      <div class="card-header" style="background:#4285f4">
+        <img class="logo-img" src="https://logo.clearbit.com/google.com" alt="Gemini logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Gemini (Google)</div>
+        <div class="card-desc">Google's advanced multimodal assistant.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Chat</span>
+          <a class="visit-btn" href="https://gemini.google.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="chat" data-title="Claude">
+      <div class="card-header" style="background:#ff6f61">
+        <img class="logo-img" src="https://logo.clearbit.com/anthropic.com" alt="Claude logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Claude (Anthropic)</div>
+        <div class="card-desc">Privacy-focused assistant good for long-form reasoning.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Chat</span>
+          <a class="visit-btn" href="https://claude.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="chat" data-title="Grok">
+      <div class="card-header" style="background:#000">
+        <img class="logo-img" src="https://logo.clearbit.com/x.ai" alt="Grok logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Grok (xAI)</div>
+        <div class="card-desc">xAI's fast, opinionated chat assistant (Grok).</div>
+        <div class="visit-row">
+          <span class="cat-pill">Chat</span>
+          <a class="visit-btn" href="https://grok.x.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="chat" data-title="Perplexity">
+      <div class="card-header" style="background:#6e44ff">
+        <img class="logo-img" src="https://logo.clearbit.com/perplexity.ai" alt="Perplexity logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Perplexity</div>
+        <div class="card-desc">AI search & answer engine with citations.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Chat</span>
+          <a class="visit-btn" href="https://perplexity.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="chat" data-title="Poe">
+      <div class="card-header" style="background:#8b5cf6">
+        <img class="logo-img" src="https://logo.clearbit.com/poe.com" alt="Poe logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Poe</div>
+        <div class="card-desc">Multi-model chat platform (various LLMs accessible).</div>
+        <div class="visit-row">
+          <span class="cat-pill">Chat</span>
+          <a class="visit-btn" href="https://poe.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="chat" data-title="You.com">
+      <div class="card-header" style="background:#10b981">
+        <img class="logo-img" src="https://logo.clearbit.com/you.com" alt="You.com logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">You.com</div>
+        <div class="card-desc">Search + chat with privacy-forward options.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Chat</span>
+          <a class="visit-btn" href="https://you.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="chat" data-title="Character AI">
+      <div class="card-header" style="background:#f59e0b">
+        <img class="logo-img" src="https://logo.clearbit.com/character.ai" alt="Character AI logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Character AI</div>
+        <div class="card-desc">Create conversational characters for roleplay and bots.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Chat</span>
+          <a class="visit-btn" href="https://character.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="chat" data-title="Hugging Face Chat">
+      <div class="card-header" style="background:#7c3aed">
+        <img class="logo-img" src="https://logo.clearbit.com/huggingface.co" alt="Hugging Face logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Hugging Face Chat</div>
+        <div class="card-desc">Open-source model hosting & chat playgrounds.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Chat</span>
+          <a class="visit-btn" href="https://huggingface.co/chat" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="chat" data-title="NotebookLM">
+      <div class="card-header" style="background:#4285f4">
+        <img class="logo-img" src="https://logo.clearbit.com/google.com" alt="NotebookLM logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">NotebookLM</div>
+        <div class="card-desc">Google's research-focused notebook assistant.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Chat</span>
+          <a class="visit-btn" href="https://notebooklm.google.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Image AI (10) -->
+    <article class="card" data-cat="image" data-title="Midjourney">
+      <div class="card-header" style="background:#6e44ff">
+        <img class="logo-img" src="https://logo.clearbit.com/midjourney.com" alt="Midjourney logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Midjourney</div>
+        <div class="card-desc">Artistic, stylized image generation (community-driven).</div>
+        <div class="visit-row">
+          <span class="cat-pill">Image</span>
+          <a class="visit-btn" href="https://midjourney.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="image" data-title="DALL·E 3">
+      <div class="card-header" style="background:#10a37f">
+        <img class="logo-img" src="https://logo.clearbit.com/openai.com" alt="DALL-E logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">DALL·E 3</div>
+        <div class="card-desc">OpenAI's image creator with strong text fidelity.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Image</span>
+          <a class="visit-btn" href="https://openai.com/dall-e-3" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="image" data-title="Stable Diffusion">
+      <div class="card-header" style="background:#10b981">
+        <img class="logo-img" src="https://logo.clearbit.com/stability.ai" alt="Stable Diffusion logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Stable Diffusion</div>
+        <div class="card-desc">Open-source diffusion models (many web UIs available).</div>
+        <div class="visit-row">
+          <span class="cat-pill">Image</span>
+          <a class="visit-btn" href="https://stability.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="image" data-title="Leonardo">
+      <div class="card-header" style="background:#f59e0b">
+        <img class="logo-img" src="https://logo.clearbit.com/leonardo.ai" alt="Leonardo logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Leonardo</div>
+        <div class="card-desc">Game-ready art generation & asset tooling.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Image</span>
+          <a class="visit-btn" href="https://leonardo.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="image" data-title="Playground AI">
+      <div class="card-header" style="background:#8b5cf6">
+        <img class="logo-img" src="https://logo.clearbit.com/playgroundai.com" alt="Playground AI logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Playground AI</div>
+        <div class="card-desc">Accessible image tools and editing features.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Image</span>
+          <a class="visit-btn" href="https://playgroundai.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="image" data-title="Ideogram">
+      <div class="card-header" style="background:#ec4899">
+        <img class="logo-img" src="https://logo.clearbit.com/ideogram.ai" alt="Ideogram logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Ideogram</div>
+        <div class="card-desc">Text-driven image generator particularly good with text-in-image.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Image</span>
+          <a class="visit-btn" href="https://ideogram.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="image" data-title="Adobe Firefly">
+      <div class="card-header" style="background:#ef4444">
+        <img class="logo-img" src="https://logo.clearbit.com/adobe.com" alt="Firefly logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Adobe Firefly</div>
+        <div class="card-desc">Creative Cloud image tools built for designers.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Image</span>
+          <a class="visit-btn" href="https://firefly.adobe.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="image" data-title="Canva Magic Studio">
+      <div class="card-header" style="background:#00c4b4">
+        <img class="logo-img" src="https://logo.clearbit.com/canva.com" alt="Canva logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Canva Magic Studio</div>
+        <div class="card-desc">Design + image generation inside Canva.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Image</span>
+          <a class="visit-btn" href="https://www.canva.com/magic-studio" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="image" data-title="Imagen">
+      <div class="card-header" style="background:#4285f4">
+        <img class="logo-img" src="https://logo.clearbit.com/deepmind.google" alt="Imagen logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Imagen (Google)</div>
+        <div class="card-desc">Google research image model with high photorealism.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Image</span>
+          <a class="visit-btn" href="https://deepmind.google/technologies/imagen" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Video AI (8) -->
+    <article class="card" data-cat="video" data-title="Runway">
+      <div class="card-header" style="background:#ff006e">
+        <img class="logo-img" src="https://logo.clearbit.com/runwayml.com" alt="Runway logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Runway</div>
+        <div class="card-desc">Generative video & editing tools for creators.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Video</span>
+          <a class="visit-btn" href="https://runwayml.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="video" data-title="Synthesia">
+      <div class="card-header" style="background:#10b981">
+        <img class="logo-img" src="https://logo.clearbit.com/synthesia.io" alt="Synthesia logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Synthesia</div>
+        <div class="card-desc">Create talking-avatar videos (training, marketing).</div>
+        <div class="visit-row">
+          <span class="cat-pill">Video</span>
+          <a class="visit-btn" href="https://www.synthesia.io" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="video" data-title="Pika Labs">
+      <div class="card-header" style="background:#a855f7">
+        <img class="logo-img" src="https://logo.clearbit.com/pika.art" alt="Pika logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Pika Labs</div>
+        <div class="card-desc">Fast text-to-video generation and experimentation.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Video</span>
+          <a class="visit-btn" href="https://pika.art" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="video" data-title="Luma">
+      <div class="card-header" style="background:#0ea5e9">
+        <img class="logo-img" src="https://logo.clearbit.com/luma.ai" alt="Luma logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Luma</div>
+        <div class="card-desc">3D-aware video & scene generation from multi-views.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Video</span>
+          <a class="visit-btn" href="https://luma.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="video" data-title="HeyGen">
+      <div class="card-header" style="background:#f59e0b">
+        <img class="logo-img" src="https://logo.clearbit.com/heygen.com" alt="HeyGen logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">HeyGen</div>
+        <div class="card-desc">AI avatar-based marketing & presentation videos.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Video</span>
+          <a class="visit-btn" href="https://www.heygen.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="video" data-title="Opus Clip">
+      <div class="card-header" style="background:#8b5cf6">
+        <img class="logo-img" src="https://logo.clearbit.com/opus.pro" alt="Opus logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Opus Clip</div>
+        <div class="card-desc">Automatic highlights & shorts generation from long videos.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Video</span>
+          <a class="visit-btn" href="https://www.opus.pro" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="video" data-title="Google Veo">
+      <div class="card-header" style="background:#4285f4">
+        <img class="logo-img" src="https://logo.clearbit.com/deepmind.google" alt="Veo logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Google Veo</div>
+        <div class="card-desc">Google's advanced video generation research & products.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Video</span>
+          <a class="visit-btn" href="https://deepmind.google/technologies/veo" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="video" data-title="Kling AI">
+      <div class="card-header" style="background:#ef4444">
+        <img class="logo-img" src="https://logo.clearbit.com/klingai.com" alt="Kling AI logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Kling AI</div>
+        <div class="card-desc">High-quality short video generation & editing.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Video</span>
+          <a class="visit-btn" href="https://www.klingai.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Image-to-Video (6) -->
+    <article class="card" data-cat="img2vid" data-title="Runway Img2Vid">
+      <div class="card-header" style="background:#ff006e">
+        <img class="logo-img" src="https://logo.clearbit.com/runwayml.com" alt="Runway Img2Vid">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Runway Img2Vid</div>
+        <div class="card-desc">Animate static images into motion sequences.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Image-to-Video</span>
+          <a class="visit-btn" href="https://runwayml.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="img2vid" data-title="Kaiber">
+      <div class="card-header" style="background:#10b981">
+        <img class="logo-img" src="https://logo.clearbit.com/kaiber.ai" alt="Kaiber logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Kaiber</div>
+        <div class="card-desc">Image-driven motion & stylized video outputs.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Image-to-Video</span>
+          <a class="visit-btn" href="https://www.kaiber.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="img2vid" data-title="Pika Img2Vid">
+      <div class="card-header" style="background:#a855f7">
+        <img class="logo-img" src="https://logo.clearbit.com/pika.art" alt="Pika Img2Vid">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Pika Img2Vid</div>
+        <div class="card-desc">Quick image to video conversion and effects.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Image-to-Video</span>
+          <a class="visit-btn" href="https://pika.art" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="img2vid" data-title="Genmo">
+      <div class="card-header" style="background:#f59e0b">
+        <img class="logo-img" src="https://logo.clearbit.com/genmo.ai" alt="Genmo logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Genmo</div>
+        <div class="card-desc">Creative image-to-motion storytelling tools.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Image-to-Video</span>
+          <a class="visit-btn" href="https://www.genmo.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="img2vid" data-title="Viggle">
+      <div class="card-header" style="background:#8b5cf6">
+        <img class="logo-img" src="https://logo.clearbit.com/viggle.ai" alt="Viggle logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Viggle</div>
+        <div class="card-desc">Tools to animate stills and generate motion loops.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Image-to-Video</span>
+          <a class="visit-btn" href="https://www.viggle.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="img2vid" data-title="Luma Img2Vid">
+      <div class="card-header" style="background:#0ea5e9">
+        <img class="logo-img" src="https://logo.clearbit.com/luma.ai" alt="Luma Img2Vid logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Luma Img2Vid</div>
+        <div class="card-desc">Seamless 3D-aware transitions and animations from images.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Image-to-Video</span>
+          <a class="visit-btn" href="https://luma.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Audio AI (7) -->
+    <article class="card" data-cat="audio" data-title="ElevenLabs">
+      <div class="card-header" style="background:#f43f5e">
+        <img class="logo-img" src="https://logo.clearbit.com/elevenlabs.io" alt="ElevenLabs logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">ElevenLabs</div>
+        <div class="card-desc">High-quality text-to-speech and voice cloning.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Audio</span>
+          <a class="visit-btn" href="https://elevenlabs.io" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="audio" data-title="Suno">
+      <div class="card-header" style="background:#10b981">
+        <img class="logo-img" src="https://logo.clearbit.com/suno.com" alt="Suno logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Suno</div>
+        <div class="card-desc">AI music composition & generation platform.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Audio</span>
+          <a class="visit-btn" href="https://suno.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="audio" data-title="Play.ht">
+      <div class="card-header" style="background:#7c3aed">
+        <img class="logo-img" src="https://logo.clearbit.com/play.ht" alt="Play.ht logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Play.ht</div>
+        <div class="card-desc">Text-to-speech platform for podcasts & narration.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Audio</span>
+          <a class="visit-btn" href="https://play.ht" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="audio" data-title="Mubert">
+      <div class="card-header" style="background:#ec4899">
+        <img class="logo-img" src="https://logo.clearbit.com/mubert.com" alt="Mubert logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Mubert</div>
+        <div class="card-desc">AI-generated royalty-free music for creators.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Audio</span>
+          <a class="visit-btn" href="https://mubert.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="audio" data-title="Respeecher">
+      <div class="card-header" style="background:#3b82f6">
+        <img class="logo-img" src="https://logo.clearbit.com/respeecher.com" alt="Respeecher logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Respeecher</div>
+        <div class="card-desc">High-quality voice cloning & speech transformation.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Audio</span>
+          <a class="visit-btn" href="https://www.respeecher.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="audio" data-title="Descript Overdub">
+      <div class="card-header" style="background:#ef4444">
+        <img class="logo-img" src="https://logo.clearbit.com/descript.com" alt="Descript logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Descript (Overdub)</div>
+        <div class="card-desc">Podcast & audio editing with AI voice cloning.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Audio</span>
+          <a class="visit-btn" href="https://www.descript.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="audio" data-title="Udio">
+      <div class="card-header" style="background:#f59e0b">
+        <img class="logo-img" src="https://logo.clearbit.com/udio.com" alt="Udio logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Udio</div>
+        <div class="card-desc">AI-driven song generation & production assistant.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Audio</span>
+          <a class="visit-btn" href="https://udio.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Coding AI (8) -->
+    <article class="card" data-cat="coding" data-title="GitHub Copilot">
+      <div class="card-header" style="background:#24292e">
+        <img class="logo-img" src="https://logo.clearbit.com/github.com" alt="Copilot logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">GitHub Copilot</div>
+        <div class="card-desc">AI code completion and pair-programming assistant.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Coding</span>
+          <a class="visit-btn" href="https://github.com/features/copilot" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="coding" data-title="Replit AI">
+      <div class="card-header" style="background:#f97316">
+        <img class="logo-img" src="https://logo.clearbit.com/replit.com" alt="Replit logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Replit AI</div>
+        <div class="card-desc">In-browser coding with AI helpers and deployment tools.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Coding</span>
+          <a class="visit-btn" href="https://replit.com/ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="coding" data-title="Codeium">
+      <div class="card-header" style="background:#3b82f6">
+        <img class="logo-img" src="https://logo.clearbit.com/codeium.com" alt="Codeium logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Codeium</div>
+        <div class="card-desc">Free AI code assistant and completions.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Coding</span>
+          <a class="visit-btn" href="https://codeium.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="coding" data-title="Tabnine">
+      <div class="card-header" style="background:#10b981">
+        <img class="logo-img" src="https://logo.clearbit.com/tabnine.com" alt="Tabnine logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Tabnine</div>
+        <div class="card-desc">Whole-line code completion across editors.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Coding</span>
+          <a class="visit-btn" href="https://www.tabnine.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="coding" data-title="Cursor">
+      <div class="card-header" style="background:#8b5cf6">
+        <img class="logo-img" src="https://logo.clearbit.com/cursor.sh" alt="Cursor logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Cursor</div>
+        <div class="card-desc">AI coding environment and assistant for dev workflows.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Coding</span>
+          <a class="visit-btn" href="https://cursor.sh" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="coding" data-title="Aider">
+      <div class="card-header" style="background:#f59e0b">
+        <img class="logo-img" src="https://logo.clearbit.com/aider.chat" alt="Aider logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Aider</div>
+        <div class="card-desc">AI assistant integrated into developer workflows.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Coding</span>
+          <a class="visit-btn" href="https://www.aider.chat" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="coding" data-title="Cody (Sourcegraph)">
+      <div class="card-header" style="background:#6b7280">
+        <img class="logo-img" src="https://logo.clearbit.com/sourcegraph.com" alt="Cody logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Cody</div>
+        <div class="card-desc">Code search & AI assistant for large codebases.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Coding</span>
+          <a class="visit-btn" href="https://sourcegraph.com/cody" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="coding" data-title="n8n">
+      <div class="card-header" style="background:#ff6b35">
+        <img class="logo-img" src="https://logo.clearbit.com/n8n.io" alt="n8n logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">n8n</div>
+        <div class="card-desc">Automation/workflow builder with AI integrations.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Coding</span>
+          <a class="visit-btn" href="https://n8n.io" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Writing AI (7) -->
+    <article class="card" data-cat="writing" data-title="Jasper">
+      <div class="card-header" style="background:#f59e0b">
+        <img class="logo-img" src="https://logo.clearbit.com/jasper.ai" alt="Jasper logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Jasper</div>
+        <div class="card-desc">Marketing copy & long-form assistant for creators.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Writing</span>
+          <a class="visit-btn" href="https://www.jasper.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="writing" data-title="Grammarly">
+      <div class="card-header" style="background:#10b981">
+        <img class="logo-img" src="https://logo.clearbit.com/grammarly.com" alt="Grammarly logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Grammarly</div>
+        <div class="card-desc">Grammar, clarity, and AI writing assistant for professionals.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Writing</span>
+          <a class="visit-btn" href="https://www.grammarly.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="writing" data-title="Copy.ai">
+      <div class="card-header" style="background:#ef4444">
+        <img class="logo-img" src="https://logo.clearbit.com/copy.ai" alt="Copy.ai logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Copy.ai</div>
+        <div class="card-desc">Quick social & ad copy generator with templates.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Writing</span>
+          <a class="visit-btn" href="https://www.copy.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="writing" data-title="Writesonic">
+      <div class="card-header" style="background:#3b82f6">
+        <img class="logo-img" src="https://logo.clearbit.com/writesonic.com" alt="Writesonic logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Writesonic</div>
+        <div class="card-desc">AI for blogs, ads, and multilingual short-form content.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Writing</span>
+          <a class="visit-btn" href="https://www.writesonic.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="writing" data-title="Sudowrite">
+      <div class="card-header" style="background:#ec4899">
+        <img class="logo-img" src="https://logo.clearbit.com/sudowrite.com" alt="Sudowrite logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Sudowrite</div>
+        <div class="card-desc">Creative writing aid for fiction authors and storytellers.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Writing</span>
+          <a class="visit-btn" href="https://sudowrite.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="writing" data-title="ProWritingAid">
+      <div class="card-header" style="background:#f97316">
+        <img class="logo-img" src="https://logo.clearbit.com/prowritingaid.com" alt="ProWritingAid logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">ProWritingAid</div>
+        <div class="card-desc">Advanced editor with stylistic suggestions and reports.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Writing</span>
+          <a class="visit-btn" href="https://www.prowritingaid.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="writing" data-title="Rytr">
+      <div class="card-header" style="background:#8b5cf6">
+        <img class="logo-img" src="https://logo.clearbit.com/rytr.me" alt="Rytr logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Rytr</div>
+        <div class="card-desc">Budget-friendly content generator for small teams & individuals.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Writing</span>
+          <a class="visit-btn" href="https://www.rytr.me" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Productivity AI (8) -->
+    <article class="card" data-cat="productivity" data-title="Zapier">
+      <div class="card-header" style="background:#f97316">
+        <img class="logo-img" src="https://logo.clearbit.com/zapier.com" alt="Zapier logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Zapier</div>
+        <div class="card-desc">Connect apps and automate workflows (Zapier AI features).</div>
+        <div class="visit-row">
+          <span class="cat-pill">Productivity</span>
+          <a class="visit-btn" href="https://zapier.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="productivity" data-title="Notion AI">
+      <div class="card-header" style="background:#000">
+        <img class="logo-img" src="https://logo.clearbit.com/notion.so" alt="Notion logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Notion AI</div>
+        <div class="card-desc">Notes, tasks and knowledge with built-in AI assistance.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Productivity</span>
+          <a class="visit-btn" href="https://www.notion.so" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="productivity" data-title="Gamma">
+      <div class="card-header" style="background:#6366f1">
+        <img class="logo-img" src="https://logo.clearbit.com/gamma.app" alt="Gamma logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Gamma</div>
+        <div class="card-desc">AI presentations that turn ideas into visual decks quickly.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Productivity</span>
+          <a class="visit-btn" href="https://www.gamma.app" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="productivity" data-title="Shortwave">
+      <div class="card-header" style="background:#4285f4">
+        <img class="logo-img" src="https://logo.clearbit.com/shortwave.com" alt="Shortwave logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Shortwave</div>
+        <div class="card-desc">Smart inbox and AI email management.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Productivity</span>
+          <a class="visit-btn" href="https://www.shortwave.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="productivity" data-title="Microsoft Copilot">
+      <div class="card-header" style="background:#0078d4">
+        <img class="logo-img" src="https://logo.clearbit.com/microsoft.com" alt="Microsoft Copilot logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Microsoft Copilot</div>
+        <div class="card-desc">AI features across Microsoft 365 to boost productivity.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Productivity</span>
+          <a class="visit-btn" href="https://www.microsoft.com/en-us/microsoft-365/copilot" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="productivity" data-title="Vomo AI">
+      <div class="card-header" style="background:#10b981">
+        <img class="logo-img" src="https://logo.clearbit.com/vomo.ai" alt="Vomo logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Vomo AI</div>
+        <div class="card-desc">Meeting transcription, summarization and action items.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Productivity</span>
+          <a class="visit-btn" href="https://vomo.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="productivity" data-title="Writer">
+      <div class="card-header" style="background:#ff6f61">
+        <img class="logo-img" src="https://logo.clearbit.com/writer.com" alt="Writer logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Writer</div>
+        <div class="card-desc">Brand-focused writing assistant for teams.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Productivity</span>
+          <a class="visit-btn" href="https://www.writer.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="productivity" data-title="Surfer SEO">
+      <div class="card-header" style="background:#f59e0b">
+        <img class="logo-img" src="https://logo.clearbit.com/surferseo.com" alt="Surfer SEO logo">
+      </div>
+      <div class="card-body">
+        <div class="card-title">Surfer SEO</div>
+        <div class="card-desc">AI content optimization and SERP-driven suggestions.</div>
+        <div class="visit-row">
+          <span class="cat-pill">Productivity</span>
+          <a class="visit-btn" href="https://surferseo.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </article>
+
+    <!-- Extras to ensure 60+ tools: add several more popular tools across categories -->
+    <article class="card" data-cat="image" data-title="Flux AI">
+      <div class="card-header" style="background:#3b82f6"><img class="logo-img" src="https://logo.clearbit.com/midjourney.com" alt=""></div>
+      <div class="card-body">
+        <div class="card-title">Flux AI</div>
+        <div class="card-desc">High-res image gen and upscaling.</div>
+        <div class="visit-row"><span class="cat-pill">Image</span><a class="visit-btn" href="https://midjourney.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="video" data-title="Descript">
+      <div class="card-header" style="background:#ef4444"><img class="logo-img" src="https://logo.clearbit.com/descript.com" alt=""></div>
+      <div class="card-body">
+        <div class="card-title">Descript</div>
+        <div class="card-desc">Edit audio & video by editing transcripts.</div>
+        <div class="visit-row"><span class="cat-pill">Video</span><a class="visit-btn" href="https://www.descript.com" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="audio" data-title="Murf">
+      <div class="card-header" style="background:#6e44ff"><img class="logo-img" src="https://logo.clearbit.com/murf.ai" alt=""></div>
+      <div class="card-body">
+        <div class="card-title">Murf.ai</div>
+        <div class="card-desc">AI voiceovers & narration.</div>
+        <div class="visit-row"><span class="cat-pill">Audio</span><a class="visit-btn" href="https://murf.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+    </article>
+
+    <article class="card" data-cat="productivity" data-title="ShortlyAI">
+      <div class="card-header" style="background:#1f2937"><img class="logo-img" src="https://logo.clearbit.com/shortly.ai" alt=""></div>
+      <div class="card-body">
+        <div class="card-title">ShortlyAI</div>
+        <div class="card-desc">Minimalist writing AI for quick drafts.</div>
+        <div class="visit-row"><span class="cat-pill">Writing</span><a class="visit-btn" href="https://shortly.ai" target="_blank" rel="noopener">Visit Site <i class="fas fa-arrow-right"></i></a></div>
+      </div>
+    </article>
+
+    <!-- You can duplicate/add more cards here to increase beyond 60 as needed -->
+
+  </div>
+</div>
+
+<footer>
+  <p>AI Hub Pro • 60+ Tools • Made with ❤️ • Updated November 2025</p>
+  <p style="font-size:0.9rem;color:var(--text-light);margin-top:8px">
+    Sources & curation: TechRadar, Synthesia blog, Zapier research, G2 and other 2025 reviews.
+  </p>
+</footer>
+
+<script>
+  /* THEME: explicit 'light' or 'dark' + localStorage */
+  const themeBtn = document.getElementById('themeToggle');
+  function setTheme(t){
+    document.body.setAttribute('data-theme', t);
+    const icon = document.getElementById('icon');
+    if(t === 'dark'){ icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); }
+    else { icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); }
+    localStorage.setItem('aihub-theme', t);
+  }
+  (function initTheme(){
+    const saved = localStorage.getItem('aihub-theme');
+    if(saved) { setTheme(saved); return; }
+    const preferDark = window.matchMedia && window.matchMedia('(prefers-color-scheme:dark)').matches;
+    setTheme(preferDark ? 'dark' : 'light');
+  })();
+  themeBtn.addEventListener('click', () => {
+    const cur = document.body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+    setTheme(cur === 'dark' ? 'light' : 'dark');
+  });
+
+  /* SEARCH + TABS FILTER */
+  const tabs = document.querySelectorAll('.tab');
+  const cards = Array.from(document.querySelectorAll('.card'));
+  const searchInput = document.getElementById('search');
+
+  tabs.forEach(tab=>{
+    tab.addEventListener('click', ()=>{
+      tabs.forEach(t=>t.classList.remove('active'));
+      tab.classList.add('active');
+      applyFilter();
+    });
+  });
+
+  searchInput.addEventListener('input', applyFilter);
+
+  function applyFilter(){
+    const q = searchInput.value.trim().toLowerCase();
+    const activeCat = document.querySelector('.tab.active').dataset.cat;
+
+    cards.forEach(card=>{
+      const title = (card.dataset.title || '').toLowerCase();
+      const desc = (card.querySelector('.card-desc')?.textContent || '').toLowerCase();
+      const cat = card.dataset.cat || 'all';
+
+      const matchesCat = (activeCat === 'all') || (cat === activeCat);
+      const matchesQuery = !q || title.includes(q) || desc.includes(q);
+      card.style.display = (matchesCat && matchesQuery) ? 'block' : 'none';
+    });
+  }
+
+  // Accessibility: press '/' to focus search
+  window.addEventListener('keydown', (e)=>{
+    if(e.key === '/' && document.activeElement !== searchInput){
+      e.preventDefault();
+      searchInput.focus();
+    }
+  });
+
+  // ensure initial filter state
+  applyFilter();
+</script>
+
+</body>
+</html>
